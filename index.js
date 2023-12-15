@@ -17,7 +17,7 @@ const calculateOrderAmount = (items) => {
   const totalAmount = array.reduce((a, b) => {
     return a + b;
   }, 0);
-
+  console.log(totalAmount);
   return totalAmount * 100;
 };
 
@@ -45,7 +45,7 @@ app.post("/create-payment-intent", async (req, res) => {
     },
     // receipt_email: userEmail
   });
-
+  console.log(paymentIntent);
   res.send({
     clientSecret: paymentIntent.client_secret,
   });
